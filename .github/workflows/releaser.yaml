@@ -8,18 +8,18 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Checkout
-          uses: actions/checkout@master
+          uses: actions/checkout@61b9e3751b92087fd0b06925ba6dd6314e06f089 # master
         - name: Setup Go
-          uses: actions/setup-go@v1
+          uses: actions/setup-go@0caeaed6fd66a828038c2da3c0f662a42862658f # v1
           with:
-            go-version: 1.14
+            go-version: 1.21
         - name: GoReleaser
-          uses: goreleaser/goreleaser-action@v1
+          uses: goreleaser/goreleaser-action@6e37040623d14330555c7be1603a9182cf92d32a # v1
           with:
             version: latest
             args: release --rm-dist
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         - name: Update new version in krew-index
-          uses: rajatjindal/krew-release-bot@v0.0.38
+          uses: rajatjindal/krew-release-bot@3320c0b546b5d2320613c46762bd3f73e2801bdc # v0.0.38
       
