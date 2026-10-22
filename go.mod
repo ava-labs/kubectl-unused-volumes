@@ -2,6 +2,8 @@ module github.com/ava-labs/kubectl-unused-volumes
 
 go 1.21
 
+toolchain go1.26.10
+
 require (
 	github.com/fatih/color v1.16.0
 	github.com/gosuri/uitable v0.0.4
