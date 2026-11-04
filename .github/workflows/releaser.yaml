@@ -3,12 +3,18 @@ on:
   push:
     tags:
     - 'v*.*.*'
+permissions: {}
+
 jobs:
     goreleaser:
+        permissions:
+          contents: write
         runs-on: ubuntu-latest
         steps:
         - name: Checkout
           uses: actions/checkout@master
+          with:
+            persist-credentials: false
         - name: Setup Go
           uses: actions/setup-go@v1
           with:
